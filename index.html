@@ -7,10 +7,10 @@
     <title>Acko</title>
     <link rel="stylesheet" type="text/css" href="styles/styles.css">
     <link rel="stylesheet" type="text/css" href="styles/navbar.css">
+    <link rel="stylesheet" type="text/css" href="styles/content.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-
 </head>
 
 <body>
@@ -27,15 +27,14 @@
                             </a>
                         </div>
                         <div id="nav-pane">
-                            <div class="nav-item"><a href="#">schedule</a></div>
+                            <div class="nav-item active"><a href="#">schedule</a></div>
                             <div class="nav-item"><a href="#">overview</a></div>
                             <div class="nav-item"><a href="#">articles</a></div>
                             <div class="nav-item nav-user">
-                                <div><i class="far fa-envelope"></i></div>
-                                <div>User</div>
+                                <div class="nav-user-notifications"><i class="far fa-envelope"></i></div>
+                                <div class="nav-user-name">UserName</div>
                             </div>
                         </div>
-
                         <div id="toggle">
                             <div class="span" id="one"></div>
                             <div class="span" id="two"></div>
@@ -47,36 +46,10 @@
                             <div class="nav-item"><a href="#">schedule</a></div>
                             <div class="nav-item"><a href="#">overview</a></div>
                             <div class="nav-item"><a href="#">articles</a></div>
-                            <div class="nav-item nav-user">
-                                <div><i class="far fa-envelope"></i></div>
-                                <div>User</div>
-                            </div>
+                            <div class="nav-item"><a href="#"><i class="far fa-envelope"></i></a></div>
+                            <div class="nav-item"><a href="#">user</a></div>
                         </div>
                     </div>
-
-                    <!-- <nav id="main-nav-bar">
-                        <div class="nav-bar">
-                            <div class="nav-bar-link nav-bar-brand">
-                                <a href="#">
-                                    <i class="fas fa-heartbeat color-theme"></i>
-                                    fit
-                                    <span class="color-theme">me</span>
-                                </a>
-                            </div>
-                            <div class="nav-bar-link nav-bar-toggle">
-                                <i class="fas fa-bars"></i>
-                            </div>
-                            <nav class="nav-bar-items toggle-view">
-                                <div class="nav-bar-link"><a href="#">schedule</a></div>
-                                <div class="nav-bar-link"><a href="#">overview</a></div>
-                                <div class="nav-bar-link"><a href="#">articles</a></div>
-                            </nav>
-                            <div class="nav-bar-link nav-bar-user">
-                                <div><i class="far fa-envelope"></i></div>
-                                <div>User</div>
-                            </div>
-                        </div>
-                    </nav> -->
                     <div id="title-container">
                         <div>
                             <div class="heading-container">
@@ -89,14 +62,73 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
-
+        <div id="content">
+            <div id="content-tabs">
+                <div class="content-tab current-tab">
+                    <a href="tab-data-1">
+                        <i class="fas fa-spa"></i>
+                    </a>
+                </div>
+                <div class="content-tab">
+                    <a href="tab-data-2">
+                        <i class="fas fa-running"></i>
+                    </a>
+                </div>
+                <div class="content-tab">
+                    <a href="tab-data-3">
+                        <i class="fas fa-caret-right"></i>
+                    </a>
+                </div>
+                <div class="content-tab">
+                    <a href="tab-data-4">
+                        <i class="fas fa-dumbbell"></i>
+                    </a>
+                </div>
+            </div>
+            <div id="content-data">
+                <div id="tab-data-1" class="tab-pane active">
+                    yoga
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio porro corporis voluptatibus sit,
+                    dicta
+                    soluta. Ipsum eos, tempora perferendis laudantium temporibus quibusdam. A maxime ea labore
+                    recusandae
+                    beatae delectus saepe?
+                </div>
+                <div id="tab-data-2" class="tab-pane">
+                    running
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto debitis iure molestiae vel
+                    eligendi!
+                    Reiciendis consequatur, neque assumenda, eum quis placeat optio saepe dolore libero recusandae sed
+                    iusto
+                    itaque ex.
+                </div>
+                <div id="tab-data-3" class="tab-pane">
+                    dance
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto debitis iure molestiae vel
+                    eligendi!
+                    Reiciendis consequatur, neque assumenda, eum quis placeat optio saepe dolore libero recusandae sed
+                    iusto
+                    itaque ex.
+                </div>
+                <div id="tab-data-4" class="tab-pane">
+                    fitness
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto debitis iure molestiae vel
+                    eligendi!
+                    Reiciendis consequatur, neque assumenda, eum quis placeat optio saepe dolore libero recusandae sed
+                    iusto
+                    itaque ex.
+                </div>
+            </div>
+        </div>
         <section></section>
         <footer></footer>
     </div>
     <script src="scripts/navbar.js"></script>
+    <script src="scripts/content.js"></script>
 </body>
 
 </html>
