@@ -1,0 +1,64 @@
+.card {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 0.5rem;
+  background-color: #fff;
+  padding: 1rem;
+}
+
+/* .card .card-info-para {
+    overflow: hidden;
+    text-overflow: ellipsis;
+} */
+
+.card-trainer-image-container {
+  position: relative;
+  top: -2rem;
+  background-color: lightgreen;
+  width: 10rem;
+  height: 10rem;
+}
+
+/* .card-info-details {
+  overflow: hidden;
+} */
+
+.card-trainer-image {
+  width: 10rem;
+  height: 10rem;
+  object-fit: cover;
+}
+
+/* .card-info-para {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+} */
+
+/* mixin for multiline */
+.card-info-para {
+  overflow: hidden;
+  position: relative;
+  /* line-height: 1.2em; */
+  max-height: 5.5rem;
+  text-align: justify;
+  margin-right: -1rem;
+  padding-right: 1rem;
+}
+.card-info-para:before {
+  content: "...";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  right: 1rem;
+  background-color: #fff;
+}
+.card-info-para:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 1rem;
+  height: 1rem;
+  margin-top: 0.2rem;
+  background: white;
+}

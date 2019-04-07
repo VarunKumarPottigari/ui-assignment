@@ -50,8 +50,6 @@
 
 #content-data {
   margin-top: 5rem;
-  background-color: #fff;
-  padding: 3rem;
   border-radius: 0.5rem;
 }
 
@@ -60,7 +58,9 @@
 }
 
 .tab-pane.active {
-  display: block;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 0.5rem;
 }
 
 @media (min-width: 576px) {

@@ -46,14 +46,14 @@ button.button-primary {
 
 #header-background {
   background: url("./../assets/images/header-background.jpg");
-  min-height: 35rem;
+  min-height: 40rem;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
 }
 
 .img-overlay {
-  min-height: 35rem;
+  min-height: 40rem;
   width: 100%;
   background: rgba(0, 0, 0, 0.8);
 }
@@ -131,9 +131,11 @@ input.search-bar {
   }
 
   #header-background {
+    min-height: 35rem;
   }
 
   .img-overlay {
+    min-height: 35rem;
   }
 }
 
@@ -144,12 +146,21 @@ input.search-bar {
   }
 
   #header-background {
+    min-height: 35rem;
   }
 
   .img-overlay {
+    min-height: 35rem;
   }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
+  #header-background {
+    min-height: 32rem;
+  }
+
+  .img-overlay {
+    min-height: 32rem;
+  }
 }
