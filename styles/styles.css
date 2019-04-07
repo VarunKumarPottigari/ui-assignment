@@ -1,17 +1,18 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: "Raleway", sans-serif;
   font-size: 12px;
-  word-wrap: break-all;
-  overflow-wrap: break-all;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
   text-decoration: none;
   list-style-type: none;
   box-sizing: border-box;
 }
 
 body {
-  background-color: lightblue;
+  background-color: rgb(240, 240, 240)
+  /* background-color: lightblue; */
 }
 
 a {
@@ -101,7 +102,7 @@ button.button-primary {
 }
 
 .heading-container {
-  font-weight: 100;
+  /* font-weight: 100; */
 }
 
 input.search-bar {

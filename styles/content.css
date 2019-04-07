@@ -1,5 +1,5 @@
 #content {
-  width: 80%;
+  width: 100%;
   z-index: 10;
   position: relative;
   top: -5rem;
@@ -59,8 +59,8 @@
 
 .tab-pane.active {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 0.5rem;
+  grid-template-columns: 1fr;
+  grid-gap: 1rem;
 }
 
 @media (min-width: 576px) {
@@ -71,12 +71,20 @@
   .content-tab .fas {
     font-size: 3rem;
   }
+
+  #content {
+    width: 80%;
+  }
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
   .content-tab .fas {
     font-size: 4rem;
+  }
+
+  .tab-pane.active {
+    grid-template-columns: 1fr 1fr;
   }
 }
 

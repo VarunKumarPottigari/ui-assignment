@@ -4,6 +4,11 @@
   grid-gap: 0.5rem;
   background-color: #fff;
   padding: 1rem;
+  margin-bottom: 1.5rem;
+  color: rgb(114, 114, 114);
+  border-radius: 5px;
+  box-shadow: 0px 1px 2px 0px rgb(172, 172, 172);
+  /* border: 1px solid rgb(172, 172, 172); */
 }
 
 /* .card .card-info-para {
@@ -27,6 +32,35 @@
   width: 10rem;
   height: 10rem;
   object-fit: cover;
+  object-position: top left;
+  border-radius: 5px;
+}
+
+.card-info-header {
+  text-transform: capitalize;
+  color: rgb(13, 58, 39);
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+
+.card-info-trainer {
+  text-transform: capitalize;
+  font-weight: 700;
+  color: rgb(70, 70, 70);
+}
+
+.card-sub {
+  font-weight: 700;
+  text-transform: capitalize;
+  color: rgb(13, 58, 39);
+}
+/* 
+.card-info-row {
+  overflow: hidden;
+} */
+
+.card-sub-info {
+  text-transform: capitalize;
 }
 
 /* .card-info-para {
@@ -40,7 +74,7 @@
   overflow: hidden;
   position: relative;
   /* line-height: 1.2em; */
-  max-height: 5.5rem;
+  max-height: 6rem;
   text-align: justify;
   margin-right: -1rem;
   padding-right: 1rem;
@@ -48,7 +82,6 @@
 .card-info-para:before {
   content: "...";
   position: absolute;
-  right: 0;
   bottom: 0;
   right: 1rem;
   background-color: #fff;
@@ -61,4 +94,50 @@
   height: 1rem;
   margin-top: 0.2rem;
   background: white;
+}
+
+.card-info-subscriber {
+  justify-self: end;
+}
+
+.card-info-rating {
+  justify-self: end;
+}
+
+.button-subscribe {
+  text-shadow: 0px 1px 4px rgb(75, 75, 75);
+  box-shadow: 0px 5px 10px 0px rgb(150, 150, 150);
+  font-weight: 700;
+}
+
+.stars {
+  margin-bottom: 5px;
+}
+
+.stars-outer {
+  position: relative;
+  display: inline-block;
+}
+
+.stars-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+}
+
+.stars-outer::before {
+  content: "\f005 \f005 \f005 \f005 \f005";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #ccc;
+}
+
+.stars-inner::before {
+  content: "\f005 \f005 \f005 \f005 \f005";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #f8ce0b;
 }

@@ -11,10 +11,8 @@ function loadJSON(callback) {
     xobj.send(null);
 }
 
-function buildHTML(jsonData) {
-    // console.log(jsonData.fitness.length);
-    let fitnessData = jsonData.fitness;
-    let tabPane = document.getElementById("tab-data-1");
+function buildTabs(fitnessData, elementId) {
+    let tabPane = document.getElementById(elementId);
     for(let i = 0; i < fitnessData.length; i++) {
         let fitness = fitnessData[i];
 
@@ -41,7 +39,7 @@ function buildHTML(jsonData) {
         cardInfoTrainer.classList.add('card-info-trainer');
         cardInfoPara.classList.add('card-info-para');
         cardInfoHeader.innerText = fitness.program;
-        cardInfoBy.innerText = 'by';
+        cardInfoBy.innerText = 'by ';
         cardInfoTrainer.innerText = fitness.trainer;
         cardInfoPara.innerText = fitness.info;
         
@@ -55,7 +53,7 @@ function buildHTML(jsonData) {
         cardInfoClub.classList.add('card-info-row');
         let cardInfoClubSub = document.createElement('span');
         cardInfoClubSub.classList.add('card-sub');
-        cardInfoClubSub.innerText = 'club';
+        cardInfoClubSub.innerText = 'club: ';
         let cardInfoSubInfo = document.createElement('span');
         cardInfoSubInfo.classList.add('card-sub-info');
         cardInfoSubInfo.innerText = fitness.club;
@@ -66,7 +64,7 @@ function buildHTML(jsonData) {
         cardInfoPartners.classList.add('card-info-row');
         let cardInfoPartnerSub = document.createElement('span');
         cardInfoPartnerSub.classList.add('card-sub');
-        cardInfoPartnerSub.innerText = 'partners';
+        cardInfoPartnerSub.innerText = 'partners: ';
         let cardInfoPartnerInfo = document.createElement('span');
         cardInfoPartnerInfo.classList.add('card-sub-info');
         cardInfoPartnerInfo.innerText = fitness.partners;
@@ -77,7 +75,7 @@ function buildHTML(jsonData) {
         cardInfoMembers.classList.add('card-info-row');
         let cardInfoMembersSub = document.createElement('span');
         cardInfoMembersSub.classList.add('card-sub');
-        cardInfoMembersSub.innerText = 'members';
+        cardInfoMembersSub.innerText = 'members: ';
         let cardInfoMemberInfo = document.createElement('span');
         cardInfoMemberInfo.classList.add('card-sub-info');
         cardInfoMemberInfo.innerText = fitness.members;
@@ -90,7 +88,24 @@ function buildHTML(jsonData) {
 
         let cardRating = document.createElement('div');
         cardRating.classList.add('card-info-rating');
-        cardRating.innerText = 'rating';
+
+        let reviews = document.createElement('div');
+        reviews.classList.add('card-reviews');
+        reviews.innerText = `(${fitness.reviews}) Reviews`;
+
+
+        let stars = document.createElement('div');
+        stars.classList.add('stars');
+        let starsOuter = document.createElement('div');
+        starsOuter.classList.add('stars-outer');
+        let starsInner = document.createElement('div');
+        starsInner.classList.add('stars-inner');
+        starsOuter.appendChild(starsInner);
+        stars.appendChild(starsOuter);
+        cardRating.appendChild(stars);
+        cardRating.appendChild(reviews);
+        starsInner.style.width = `${fitness.rating * 20}%`; 
+        // cardRating.innerText = 'rating';
 
         let cardUsers = document.createElement('div');
         cardUsers.classList.add('card-info-users');
@@ -98,7 +113,11 @@ function buildHTML(jsonData) {
 
         let cardSubscribers = document.createElement('div');
         cardSubscribers.classList.add('card-info-subscriber');
-        cardSubscribers.innerText = 'subscribe';
+        let subscribeButton = document.createElement('button');
+        subscribeButton.classList.add('button-primary');
+        subscribeButton.classList.add('button-subscribe');
+        subscribeButton.innerText = 'schedule';
+        cardSubscribers.appendChild(subscribeButton);
 
         card.appendChild(trainerImageContainer);
         card.appendChild(cardInfoDetails);
@@ -110,6 +129,14 @@ function buildHTML(jsonData) {
         tabPane.appendChild(card);
         // console.log(cardInfoTrainer);
     }
+
+}
+
+function buildHTML(jsonData) {
+    buildTabs(jsonData.fitness, 'tab-data-1');
+    buildTabs(jsonData.running, 'tab-data-2');
+    buildTabs(jsonData.dance, 'tab-data-3');
+    buildTabs(jsonData.pilates, 'tab-data-4');
 }   
 
 (function () {
