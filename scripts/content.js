@@ -1,4 +1,5 @@
 // setting up tabs with data and listener
+"use strict";
 
 (function () {
     let myTabs = document.querySelectorAll(".content-tab");
@@ -10,7 +11,7 @@
         clickedTab.classList.add("current-tab");
         tabClickEvent.preventDefault();
         let myContentPanes = document.querySelectorAll(".tab-pane");
-        for (i = 0; i < myContentPanes.length; i++) {
+        for (let i = 0; i < myContentPanes.length; i++) {
             myContentPanes[i].classList.remove("active");
         }
         let anchorReference = this;
@@ -18,7 +19,7 @@
         let activePane = document.getElementById(activePaneId);
         activePane.classList.add("active");
     }
-    for (i = 0; i < myTabs.length; i++) {
+    for (let i = 0; i < myTabs.length; i++) {
         myTabs[i].addEventListener("click", myTabClicks, true);
     }
 })();

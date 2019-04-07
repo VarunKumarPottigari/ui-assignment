@@ -50,6 +50,7 @@
 
 .card-info-scheduler {
   justify-self: end;
+  align-self: end;
 }
 
 .card-info-rating {
@@ -58,6 +59,7 @@
 
 .card-info-users {
   display: flex;
+  align-self: end;
 }
 
 .button-schedule {

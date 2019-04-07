@@ -1,4 +1,5 @@
 // load json data from file for tabs
+"use strict";
 
 function loadJSON(callback) {
     let xobj = new XMLHttpRequest();
