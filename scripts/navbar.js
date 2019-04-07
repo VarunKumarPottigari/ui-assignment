@@ -16,3 +16,18 @@
         }
     }
 })();
+
+// event listeners for small screen nav bar element click
+(function() {
+    let navElements = document.querySelectorAll('#resize .nav-item');
+    // add listener to only first 3 elements
+    // schedule, overview, articles
+    for (let i = 0; i < 3; i++) {
+        navElements[i].addEventListener('click', refreshPage);
+    }
+
+    // refresh the page
+    function refreshPage() {
+        window.location.reload();
+    }
+})();

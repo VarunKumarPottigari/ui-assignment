@@ -1,7 +1,7 @@
 // load json data from file for tabs
 
 function loadJSON(callback) {
-    var xobj = new XMLHttpRequest();
+    let xobj = new XMLHttpRequest();
     xobj.overrideMimeType("application/json");
     xobj.open('GET', './../data/fitness.json', true);
     xobj.onreadystatechange = function () {
@@ -198,7 +198,7 @@ function buildHTML(jsonData) {
 
 (function () {
     loadJSON(function (response) {
-        var actual_JSON = JSON.parse(response);
+        let actual_JSON = JSON.parse(response);
         buildHTML(actual_JSON);
     });
 })()

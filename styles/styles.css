@@ -96,25 +96,17 @@ button.button-primary {
   font-size: 3rem;
 }
 
+.heading-container span {
+  font-style: italic;
+}
+
 .heading-container h1 {
   color: #fff;
-}
-
-.heading-container {
-}
-
-input.search-bar {
 }
 
 @media (min-width: 576px) {
   * {
     font-size: 14px;
-  }
-
-  #header-background {
-  }
-
-  .img-overlay {
   }
 }
 
