@@ -11,7 +11,7 @@
 }
 
 body {
-  background-color: rgb(240, 240, 240)
+  background-color: rgb(240, 240, 240);
   /* background-color: lightblue; */
 }
 
@@ -165,3 +165,7 @@ input.search-bar {
     min-height: 32rem;
   }
 }
+
+
+
+

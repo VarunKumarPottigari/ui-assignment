@@ -1,8 +1,7 @@
 function loadJSON(callback) {
-
     var xobj = new XMLHttpRequest();
     xobj.overrideMimeType("application/json");
-    xobj.open('GET', './../data/fitness.json', true); //'data.json' is the relative path of the .json file
+    xobj.open('GET', './../data/fitness.json', true);
     xobj.onreadystatechange = function () {
         if (xobj.readyState == 4 && xobj.status == "200") {
             callback(xobj.responseText);
@@ -13,7 +12,7 @@ function loadJSON(callback) {
 
 function buildTabs(fitnessData, elementId) {
     let tabPane = document.getElementById(elementId);
-    for(let i = 0; i < fitnessData.length; i++) {
+    for (let i = 0; i < fitnessData.length; i++) {
         let fitness = fitnessData[i];
 
         let card = document.createElement('div');
@@ -42,7 +41,7 @@ function buildTabs(fitnessData, elementId) {
         cardInfoBy.innerText = 'by ';
         cardInfoTrainer.innerText = fitness.trainer;
         cardInfoPara.innerText = fitness.info;
-        
+
         cardInfoDetails.appendChild(cardInfoHeader);
         cardInfoDetails.appendChild(cardInfoBy);
         cardInfoDetails.appendChild(cardInfoTrainer);
@@ -78,7 +77,7 @@ function buildTabs(fitnessData, elementId) {
         cardInfoMembersSub.innerText = 'members: ';
         let cardInfoMemberInfo = document.createElement('span');
         cardInfoMemberInfo.classList.add('card-sub-info');
-        cardInfoMemberInfo.innerText = fitness.members;
+        cardInfoMemberInfo.innerText = `${fitness.members}/${fitness.totalMembers}`;
         cardInfoMembers.appendChild(cardInfoMembersSub);
         cardInfoMembers.appendChild(cardInfoMemberInfo);
 
@@ -104,32 +103,69 @@ function buildTabs(fitnessData, elementId) {
         stars.appendChild(starsOuter);
         cardRating.appendChild(stars);
         cardRating.appendChild(reviews);
-        starsInner.style.width = `${fitness.rating * 20}%`; 
-        // cardRating.innerText = 'rating';
+        starsInner.style.width = `${fitness.rating * 20}%`;
 
         let cardUsers = document.createElement('div');
         cardUsers.classList.add('card-info-users');
-        cardUsers.innerText = 'users';
+        for (let j = 0; j < fitness.members && j < 4; j++) {
+            let outerCircle = document.createElement('div');
+            outerCircle.classList.add('outer-circle');
+            outerCircle.classList.add(`circle-${j}`);
+            let innerCircle = document.createElement('div');
+            innerCircle.classList.add('inner-circle', `inner-circle-${j}`);
+            outerCircle.appendChild(innerCircle);
+            cardUsers.appendChild(outerCircle);
+        }
 
-        let cardSubscribers = document.createElement('div');
-        cardSubscribers.classList.add('card-info-subscriber');
-        let subscribeButton = document.createElement('button');
-        subscribeButton.classList.add('button-primary');
-        subscribeButton.classList.add('button-subscribe');
-        subscribeButton.innerText = 'schedule';
-        cardSubscribers.appendChild(subscribeButton);
+        if (fitness.members > 4) {
+            let outerCircle = document.createElement('div');
+            outerCircle.classList.add('outer-circle', `circle-4`);
+            let innerCircle = document.createElement('div');
+            innerCircle.classList.add('inner-circle', 'inner-circle-4');
+            let innerCircleText = document.createElement('span');
+            innerCircleText.innerText = `+${fitness.members - 4}`;
+            innerCircleText.classList.add('inner-circle-4-text');
+            innerCircle.appendChild(innerCircleText);
+            outerCircle.appendChild(innerCircle);
+            cardUsers.appendChild(outerCircle);
+        }
+
+        let cardschedulers = document.createElement('div');
+        cardschedulers.classList.add('card-info-scheduler');
+        let scheduleButton = document.createElement('button');
+        scheduleButton.classList.add('button-primary');
+        scheduleButton.classList.add('button-schedule');
+        scheduleButton.innerText = 'schedule';
+        cardschedulers.appendChild(scheduleButton);
+
+        scheduleButton.setAttribute('id', elementId + i + "schedule");
+        scheduleButton.addEventListener('click', schedule);
 
         card.appendChild(trainerImageContainer);
         card.appendChild(cardInfoDetails);
         card.appendChild(cardSubInfo);
         card.appendChild(cardRating);
         card.appendChild(cardUsers);
-        card.appendChild(cardSubscribers);
+        card.appendChild(cardschedulers);
 
         tabPane.appendChild(card);
-        // console.log(cardInfoTrainer);
     }
+}
 
+function schedule(event) {
+    let targetElementId = event.target.id;
+    let targetElement = document.getElementById(targetElementId);
+    let parentElement = targetElement.parentElement;
+    let newElement = targetElement.cloneNode(true);
+    newElement.classList.toggle('button-schedule-active');
+    if (targetElement.innerHTML === 'schedule') {
+        newElement.innerText = 'scheduled';
+    } else {
+        newElement.innerText = 'schedule';
+    }
+    newElement.addEventListener('click', schedule);
+    parentElement.removeChild(targetElement);
+    parentElement.appendChild(newElement);
 }
 
 function buildHTML(jsonData) {
@@ -137,11 +173,11 @@ function buildHTML(jsonData) {
     buildTabs(jsonData.running, 'tab-data-2');
     buildTabs(jsonData.dance, 'tab-data-3');
     buildTabs(jsonData.pilates, 'tab-data-4');
-}   
+}
 
 (function () {
     loadJSON(function (response) {
-        var actual_JSON = JSON.parse(response); //Now you can use the actual_JSON variable to build your table
+        var actual_JSON = JSON.parse(response);
         buildHTML(actual_JSON);
     });
 })()

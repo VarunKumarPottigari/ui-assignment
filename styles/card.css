@@ -8,13 +8,7 @@
   color: rgb(114, 114, 114);
   border-radius: 5px;
   box-shadow: 0px 1px 2px 0px rgb(172, 172, 172);
-  /* border: 1px solid rgb(172, 172, 172); */
 }
-
-/* .card .card-info-para {
-    overflow: hidden;
-    text-overflow: ellipsis;
-} */
 
 .card-trainer-image-container {
   position: relative;
@@ -23,10 +17,6 @@
   width: 10rem;
   height: 10rem;
 }
-
-/* .card-info-details {
-  overflow: hidden;
-} */
 
 .card-trainer-image {
   width: 10rem;
@@ -96,7 +86,7 @@
   background: white;
 }
 
-.card-info-subscriber {
+.card-info-scheduler {
   justify-self: end;
 }
 
@@ -104,10 +94,20 @@
   justify-self: end;
 }
 
-.button-subscribe {
+.card-info-users {
+  display: flex;
+}
+
+.button-schedule {
   text-shadow: 0px 1px 4px rgb(75, 75, 75);
   box-shadow: 0px 5px 10px 0px rgb(150, 150, 150);
   font-weight: 700;
+  padding: 0.5rem 2.4rem !important;
+}
+
+.button-schedule-active {
+  background-color: rgb(0, 168, 14) !important;
+  padding: 0.5rem 2rem !important;
 }
 
 .stars {
@@ -140,4 +140,70 @@
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   color: #f8ce0b;
+}
+
+.outer-circle {
+  width: 2rem;
+  height: 2rem;
+  background-color: #fff;
+  border-radius: 1rem;
+}
+
+.inner-circle {
+  width: 1.8rem;
+  height: 1.8rem;
+  background-color: #000;
+  border-radius: 0.9rem;
+  transform: translateX(0.1rem) translateY(0.1rem);
+}
+
+.circle-0 {
+}
+
+.circle-1 {
+  position: relative;
+  left: -0.6rem;
+}
+
+.circle-2 {
+  position: relative;
+  left: -1.2rem;
+}
+.circle-3 {
+  position: relative;
+  left: -1.8rem;
+}
+.circle-4 {
+  position: relative;
+  left: -2.4rem;
+}
+
+.inner-circle-0 {
+  background-color: rgb(255, 0, 0);
+}
+
+.inner-circle-1 {
+  background-color: rgb(238, 255, 0);
+}
+
+.inner-circle-2 {
+  background-color: rgb(0, 132, 255);
+}
+
+.inner-circle-3 {
+  background-color: rgb(162, 0, 255);
+}
+
+.inner-circle-4 {
+  background-color: rgb(240, 240, 240);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.inner-circle-4-text {
+  position: relative;
+  top: -0.2rem;
+  left: -0.2rem;
 }
