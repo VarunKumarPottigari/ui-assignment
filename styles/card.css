@@ -13,7 +13,6 @@
 .card-trainer-image-container {
   position: relative;
   top: -2rem;
-  background-color: lightgreen;
   width: 10rem;
   height: 10rem;
 }
@@ -44,46 +43,9 @@
   text-transform: capitalize;
   color: rgb(13, 58, 39);
 }
-/* 
-.card-info-row {
-  overflow: hidden;
-} */
 
 .card-sub-info {
   text-transform: capitalize;
-}
-
-/* .card-info-para {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-} */
-
-/* mixin for multiline */
-.card-info-para {
-  overflow: hidden;
-  position: relative;
-  /* line-height: 1.2em; */
-  max-height: 6rem;
-  text-align: justify;
-  margin-right: -1rem;
-  padding-right: 1rem;
-}
-.card-info-para:before {
-  content: "...";
-  position: absolute;
-  bottom: 0;
-  right: 1rem;
-  background-color: #fff;
-}
-.card-info-para:after {
-  content: "";
-  position: absolute;
-  right: 0;
-  width: 1rem;
-  height: 1rem;
-  margin-top: 0.2rem;
-  background: white;
 }
 
 .card-info-scheduler {
@@ -206,4 +168,35 @@
   position: relative;
   top: -0.2rem;
   left: -0.2rem;
+}
+
+@media (min-width: 576px) {
+}
+
+@media (min-width: 768px) {
+  .card-trainer-image {
+    height: 11rem;
+    width: 11rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .card-trainer-image {
+    height: 9rem;
+    width: 9rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .card-trainer-image {
+    height: 10rem;
+    width: 10rem;
+  }
+}
+
+@media (min-width: 1600px) {
+  .card-trainer-image {
+    height: 11rem;
+    width: 12rem;
+  }
 }

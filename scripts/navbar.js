@@ -1,3 +1,5 @@
+// responsive navbar click handler
+
 (function () {
     let toggleBar = document.querySelector('#toggle');
     toggleBar.addEventListener('click', toggleBarClick, false);

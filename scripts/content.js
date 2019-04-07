@@ -1,4 +1,6 @@
-window.addEventListener("load", function () {
+// setting up tabs with data and listener
+
+(function () {
     var myTabs = document.querySelectorAll(".content-tab");
     function myTabClicks(tabClickEvent) {
         for (var i = 0; i < myTabs.length; i++) {
@@ -19,4 +21,4 @@ window.addEventListener("load", function () {
     for (i = 0; i < myTabs.length; i++) {
         myTabs[i].addEventListener("click", myTabClicks, true);
     }
-});
+})();

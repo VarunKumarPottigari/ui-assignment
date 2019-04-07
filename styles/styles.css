@@ -12,7 +12,6 @@
 
 body {
   background-color: rgb(240, 240, 240);
-  /* background-color: lightblue; */
 }
 
 a {
@@ -102,13 +101,11 @@ button.button-primary {
 }
 
 .heading-container {
-  /* font-weight: 100; */
 }
 
 input.search-bar {
 }
 
-/* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
   * {
     font-size: 14px;
@@ -121,7 +118,6 @@ input.search-bar {
   }
 }
 
-/* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   * {
     font-size: 16px;
@@ -140,7 +136,6 @@ input.search-bar {
   }
 }
 
-/* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
   #main-container {
     width: 80%;
@@ -155,7 +150,6 @@ input.search-bar {
   }
 }
 
-/* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
   #header-background {
     min-height: 32rem;
@@ -165,7 +159,3 @@ input.search-bar {
     min-height: 32rem;
   }
 }
-
-
-
-
